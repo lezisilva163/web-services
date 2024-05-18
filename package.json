@@ -1,0 +1,28 @@
+{
+  "name": "web-services",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "node build/server.js",
+    "build": "tsup src --out-dir build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "20.12.12",
+    "eslint": "9.3.0",
+    "tsup": "8.0.2",
+    "tsx": "4.10.5",
+    "typescript": "5.4.5"
+  },
+  "dependencies": {
+    "dotenv": "16.4.5",
+    "fastify": "4.27.0",
+    "mongodb": "6.6.2",
+    "mongoose": "8.4.0",
+    "zod": "3.23.8"
+  }
+}

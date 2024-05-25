@@ -1,21 +1,12 @@
-import { MongoClient } from "mongodb";
 import { env } from "@/env";
-
-export const mongoClient = new MongoClient(env.MONGO_URI!, {
-  serverApi: {
-    version: "1",
-    strict: true,
-    deprecationErrors: true,
-  },
-  serverSelectionTimeoutMS: 30000,
-});
+import mongoose from "mongoose";
 
 export async function connectToDatabase() {
   try {
     if (!env.MONGO_URI) {
       throw new Error("MONGO_URI is not defined");
     }
-    const client = await mongoClient.connect();
+    const client = await mongoose.connect(env.MONGO_URI!);
     console.log("Connected to MongoDB!");
     return client;
   } catch (error) {

@@ -1,11 +1,7 @@
 import { app } from "@/app";
 import { env } from "@/env";
 import { connectToDatabase } from "@/mongo/connection";
-import { postRoutes } from "@/routes/post-routes";
-import { userRoutes } from "@/routes/user-routes";
 
-app.register(userRoutes);
-app.register(postRoutes);
 async function startServer() {
   try {
     await connectToDatabase();
